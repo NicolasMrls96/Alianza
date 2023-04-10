@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ClienteRepositorio extends JpaRepository<Cliente, Integer> {
 
-    @Query(value= "SELECT u from Persona u where u.nombre=:nombre")
+    @Query(value= "SELECT * from Persona u where u.nombre=:nombre", nativeQuery = true)
     List<Cliente> buscarPorNombre(@Param("nombre") String nombre);
 }

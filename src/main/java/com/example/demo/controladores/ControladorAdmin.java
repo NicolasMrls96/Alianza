@@ -31,7 +31,7 @@ public class ControladorAdmin {
     }
 
     @GetMapping("/nombre/{nombre}")
-    public List<Admin> buscarAdminPorNombre(@PathVariable String nombre){
+    public Object buscarAdminPorNombre(@PathVariable String nombre){
         return adminServicio.buscarAdminPorNombre(nombre);
     }
 

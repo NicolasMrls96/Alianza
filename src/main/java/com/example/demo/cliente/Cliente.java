@@ -36,8 +36,9 @@ public class Cliente {
 
     @Column(name = "telefono")
     int telefonoCliente;
-    @ManyToOne
+
+    /*@ManyToOne
     @JoinColumn(name = "idCliente")
-    Cliente cliente;
+    Cliente cliente;*/
 
 }

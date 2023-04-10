@@ -20,7 +20,7 @@ public class AdminServicio {
         return adminRepositorio.findById(idAdmin);
     }
 
-    public List<Admin> buscarAdminPorNombre(String nombre){
+    public Object buscarAdminPorNombre(String nombre){
         return adminRepositorio.buscarPorNombre(nombre);
     }
 

@@ -1,5 +1,6 @@
 package com.example.demo.servicios;
 
+import com.example.demo.admin.Admin;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +30,7 @@ public class Servicios {
     Double precio;
 
     @ManyToOne
-    @JoinColumn(name = "idServicio")
-    Servicios servicios;
+    @JoinColumn(name = "idAdmin")
+    Admin admin;
 
 }

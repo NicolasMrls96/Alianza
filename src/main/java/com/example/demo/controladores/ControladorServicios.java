@@ -1,11 +1,11 @@
 package com.example.demo.controladores;
 
+import com.example.demo.cliente.Cliente;
 import com.example.demo.servicios.Servicios;
 import com.example.demo.servicios.ServiciosServicio;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/servicios")
@@ -19,5 +19,10 @@ public class ControladorServicios {
     @PostMapping("/crear")
     public Object crearServicios(@RequestBody Servicios servicios){
         return serviciosServicio.crearServicios(servicios);
+    }
+
+    @GetMapping("/nombre/{nombre}")
+    public List<Servicios> buscarServiciosPorNombre(@PathVariable String nombre){
+        return serviciosServicio.buscarServiciosPorNombre(nombre);
     }
 }
