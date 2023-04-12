@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@Entity(name = "cliente")
+@Entity(name = "clientes")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente {
@@ -16,8 +16,8 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCliente")
-    private Integer idCliente;
+    @Column(name = "id_cliente")
+    private Integer id_cliente;
 
     @Column(name = "nombre")
     String nombreCliente;
@@ -26,16 +26,16 @@ public class Cliente {
     String apellidoCliente;
 
     @Column(name = "documento")
-    int documentoCliente;
+    Integer documentoCliente;
 
     @Column(name = "servicio")
-    int servicioCliente;
+    Integer servicioCliente;
 
     @Column(name = "correo")
     String correoCliente;
 
     @Column(name = "telefono")
-    int telefonoCliente;
+    Integer telefonoCliente;
 
     /*@ManyToOne
     @JoinColumn(name = "idCliente")

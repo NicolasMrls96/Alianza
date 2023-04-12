@@ -17,14 +17,14 @@ public class Servicios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdServicio")
-    private Integer idServicio;
+    @Column(name = "id_servicio")
+    private Integer id_servicio;
 
     @Column(name = "nombreServicio")
     String nombreServicio;
 
     @Column(name = "tipoServicio")
-    int tipoServicio;
+    Integer tipoServicio;
 
     @Column(name = "precio")
     Double precio;

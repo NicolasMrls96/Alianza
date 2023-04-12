@@ -18,6 +18,7 @@ public class ControladorCliente {
 
     List<Cliente> personas = new ArrayList<>();
 
+    @CrossOrigin
     @PostMapping("/guardar-cliente")
     public Object guardarCliente(@RequestBody Cliente cliente){
 

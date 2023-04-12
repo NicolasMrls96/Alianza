@@ -1,7 +1,8 @@
 package com.example.demo.admin;
 
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import java.util.Optional;
 
 @Service
 public class AdminServicio {
@@ -26,6 +27,10 @@ public class AdminServicio {
 
     public void borrarAdmin(Integer idAdmin){
         adminRepositorio.deleteById(idAdmin);
+    }
+
+    public Object getLogin(Integer dataLogin) {
+        return adminRepositorio.findByDocumento(dataLogin);
     }
 
 }

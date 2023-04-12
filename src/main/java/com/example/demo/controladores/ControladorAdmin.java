@@ -2,11 +2,14 @@ package com.example.demo.controladores;
 
 import com.example.demo.admin.Admin;
 import com.example.demo.admin.AdminServicio;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Optional;
+@CrossOrigin
 @RestController
 @RequestMapping("/admin")
 public class ControladorAdmin {
@@ -16,9 +19,17 @@ public class ControladorAdmin {
         this.adminServicio=adminServicio;
     }
 
-    List<Admin> personas = new ArrayList<>();
+    /*@PostMapping("/registrar")
+    public Object save(@RequestBody Admin admin) {
+        return adminServicio.crearAdmin(admin);
+    }*/
 
-    @PostMapping("/guardar-admin")
+    @GetMapping("/login/{documento}")
+    public Object getCredencial (@PathVariable Integer documento) {
+        return adminServicio.getLogin(documento);
+    }
+
+   @PostMapping("/guardar-admin")
     public Object guardarAdmin(@RequestBody Admin admin){
 
         return adminServicio.crearAdmin(admin);
@@ -26,7 +37,6 @@ public class ControladorAdmin {
 
     @GetMapping("/{id}")
     public Object buscarAdmin(@PathVariable Integer id){
-
         return adminServicio.buscarAdminPorId(id);
     }
 
